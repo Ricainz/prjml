@@ -4,13 +4,13 @@ Pipeline{
     stage('Build'){
       steps{
         echo 'Building Docker Images'
-        sh 'docker build -t myflaskapp2'
+        bat build.bat
       }
     }
     stage('Running'){
       steps{
         echo 'running flask app'
-        sh 'docker run -p 5000:5000 --name myflaskapp2_c myflaskapp2'
+        bat run.bat
       }
     }
   }
